@@ -38,7 +38,7 @@ https://docs.delta.exchange/#introduction
 
 #### Products
 
-- [ ] `GET /products`
+- [x] `GET /products`
 - [ ] `GET /products/{symbol}`
 - [ ] `GET /tickers`
 - [ ] `GET /tickers/{symbol}`
