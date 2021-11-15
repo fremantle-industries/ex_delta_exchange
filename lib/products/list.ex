@@ -1,6 +1,6 @@
 defmodule ExDeltaExchange.Products.List do
-  @type market :: ExDeltaExchange.Product.t()
-  @type result :: {:ok, [market]} | {:error, :parse_result_item}
+  @type product :: ExDeltaExchange.Product.t()
+  @type result :: {:ok, [product]} | {:error, :parse_result_item}
 
   @spec get() :: result
   def get do
