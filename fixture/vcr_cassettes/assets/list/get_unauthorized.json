@@ -1,0 +1,35 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Content-Type": "application/json",
+        "api-key": "***",
+        "signature": "***",
+        "timestamp": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.delta.exchange/v2/assets"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"success\":false,\"error\":{\"code\":\"invalid_api_key\"}}",
+      "headers": {
+        "Date": "Mon, 15 Nov 2021 07:08:25 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "52",
+        "Connection": "keep-alive",
+        "X-Powered-By": "Express",
+        "Vary": "Origin",
+        "ETag": "W/\"34-zqMrKWcvarPo/9nbrMztFhbzj2o\"",
+        "CF-Cache-Status": "DYNAMIC",
+        "Expect-CT": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+        "Server": "cloudflare"
+      },
+      "status_code": 401,
+      "type": "ok"
+    }
+  }
+]

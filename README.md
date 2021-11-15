@@ -30,7 +30,7 @@ https://docs.delta.exchange/#introduction
 
 #### Assets
 
-- [ ] `GET /assets`
+- [x] `GET /assets`
 
 #### Indicies
 
