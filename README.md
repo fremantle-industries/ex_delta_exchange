@@ -34,7 +34,7 @@ https://docs.delta.exchange/#introduction
 
 #### Indicies
 
-- [ ] `GET /indices`
+- [x] `GET /indices`
 
 #### Products
 

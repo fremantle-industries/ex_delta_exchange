@@ -24,6 +24,11 @@ defmodule ExDeltaExchange.HTTPClient do
   @spec api_path :: String.t()
   def api_path, do: Application.get_env(:ex_delta_exchange, :api_path, "/v2")
 
+  @spec get(path, query_params) :: response
+  def get(path, query_params) do
+    non_auth_request(:get, path, query_params, "")
+  end
+
   @spec get(path, query_params, credentials) :: response
   def get(path, query_params, credentials) do
     auth_request(:get, path, query_params, "", credentials)
@@ -35,6 +40,20 @@ defmodule ExDeltaExchange.HTTPClient do
       verb
       |> auth_headers(path, query_params, request_body, credentials)
       |> put_content_type(:json)
+
+    %HTTPoison.Request{
+      method: verb,
+      url: url(path),
+      headers: headers,
+      body: request_body
+    }
+    |> HTTPoison.request()
+    |> parse_response()
+  end
+
+  @spec non_auth_request(verb, path, query_params, request_body) :: response
+  def non_auth_request(verb, path, _query_params, request_body) do
+    headers = [] |> put_content_type(:json)
 
     %HTTPoison.Request{
       method: verb,
