@@ -47,8 +47,8 @@ defmodule ExDeltaExchange.Product do
     updated_at: String.t(),
     settlement_time: String.t(),
     notional_type: String.t(),
-    impact_size: 0,
-    initial_margin: 0,
+    impact_size: non_neg_integer,
+    initial_margin: non_neg_integer,
     maintenance_margin: String.t(),
     contract_value: String.t(),
     contract_unit_currency: String.t(),
@@ -73,7 +73,8 @@ defmodule ExDeltaExchange.Product do
     underlying_asset: Asset.t(),
     quoting_asset: Asset.t(),
     settling_asset: Asset.t() | nil,
-    spot_index: map
+    spot_index: map,
+    launch_time: String.t()
   }
 
   defstruct ~w[
@@ -111,5 +112,6 @@ defmodule ExDeltaExchange.Product do
     quoting_asset
     settling_asset
     spot_index
+    launch_time
   ]a
 end
