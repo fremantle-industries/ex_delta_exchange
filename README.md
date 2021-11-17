@@ -12,7 +12,7 @@ Add the `ex_ftx` package to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:ex_delta_exchange, "~> 0.0.2"}
+    {:ex_delta_exchange, "~> 0.0.3"}
   ]
 end
 ```
