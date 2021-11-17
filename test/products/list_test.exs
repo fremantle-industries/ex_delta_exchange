@@ -14,6 +14,8 @@ defmodule ExDeltaExchange.Products.ListTest do
       assert length(products) > 0
       assert %ExDeltaExchange.Product{} = product = Enum.at(products, 0)
       assert product.trading_status != nil
+      assert product.underlying_asset != nil
+      assert product.quoting_asset != nil
     end
   end
 end

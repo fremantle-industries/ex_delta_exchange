@@ -1,4 +1,44 @@
 defmodule ExDeltaExchange.Product do
+  defmodule Asset do
+    @type t :: %__MODULE__{
+      base_withdrawal_fee: String.t(),
+      deposit_status: boolean,
+      id: non_neg_integer,
+      interest_credit: boolean,
+      interest_slabs: term | nil,
+      kyc_deposit_limit: String.t(),
+      kyc_withdrawal_limit: String.t(),
+      min_withdrawal_amount: String.t(),
+      minimum_precision: non_neg_integer,
+      name: String.t(),
+      networks: list,
+      precision: non_neg_integer,
+      sort_priority: non_neg_integer,
+      symbol: String.t(),
+      variable_withdrawal_fee: String.t(),
+      withdrawal_status: boolean
+    }
+
+    defstruct ~w[
+      base_withdrawal_fee
+      deposit_status
+      id
+      interest_credit
+      interest_slabs
+      kyc_deposit_limit
+      kyc_withdrawal_limit
+      min_withdrawal_amount
+      minimum_precision
+      name
+      networks
+      precision
+      sort_priority
+      symbol
+      variable_withdrawal_fee
+      withdrawal_status
+    ]a
+  end
+
   @type t :: %__MODULE__{
     id: non_neg_integer,
     symbol: String.t(),
@@ -30,9 +70,9 @@ defmodule ExDeltaExchange.Product do
     funding_method: String.t(),
     annualized_funding: String.t(),
     price_band: String.t(),
-    underlying_asset: map,
-    quoting_asset: map,
-    settling_asset: map,
+    underlying_asset: Asset.t(),
+    quoting_asset: Asset.t(),
+    settling_asset: Asset.t() | nil,
     spot_index: map
   }
 
