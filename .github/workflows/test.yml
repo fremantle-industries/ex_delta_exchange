@@ -48,7 +48,7 @@ jobs:
           DELTA_EXCHANGE_API_SECRET: ${{secrets.DELTA_EXCHANGE_API_SECRET}}
         run: mix test
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: log artifacts
           path: |
